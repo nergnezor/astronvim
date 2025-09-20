@@ -37,6 +37,12 @@ return {
         [".*/etc/foo/.*"] = "fooscript",
       },
     },
+
+    rooter = {
+      autochdir = true,
+      notify = true,
+    },
+
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
