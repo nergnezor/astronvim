@@ -1,0 +1,22 @@
+# astronvim-v5-winget.yaml
+$schema: https://aka.ms/winget-packages.schema.2.0.json
+packageVersion: 1.0.0
+defaultLocale: en-US
+installBehavior:
+  preferences:
+      scope: user
+          mode: silent
+          packages:
+            # ✅ Core Requirements
+              - packageIdentifier: Neovim.Neovim                # Neovim v0.10+ (not nightly)
+                - packageIdentifier: Microsoft.WindowsTerminal    # True color terminal
+                  - packageIdentifier: GnuPG.Gpg4win                # Clipboard tool (includes gpg-clip)
+                    - packageIdentifier: Rustlang.Rustup              # Needed for Tree-sitter CLI
+
+                      # 🧪 Optional Tools
+                        - packageIdentifier: BurntSushi.ripgrep           # <Leader>fw live grep
+                          - packageIdentifier: mackee.lazygit               # <Leader>tl / <Leader>gg Git UI
+                            - packageIdentifier: golang.Go                    # DiskUsage() <Leader>tu
+                              - packageIdentifier: Clement.bottom               # <Leader>tt process viewer
+                                - packageIdentifier: Python.Python.3              # <Leader>tp Python REPL
+                                  - packageIdentifier: Nodejs.Nodejs                # <Leader>tn Node REPL + LSP support
