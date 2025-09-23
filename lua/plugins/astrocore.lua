@@ -41,6 +41,10 @@ return {
     rooter = {
       autochdir = true,
       notify = true,
+      detector = {
+        { "cargo.toml" },
+        "lsp",
+      },
     },
 
     -- vim options can be configured here
@@ -50,13 +54,14 @@ return {
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
-        wrap = false, -- sets vim.opt.wrap
+        -- wrap = false, -- sets vim.opt.wrap
         guifont = "FiraCode_Nerd_Font:h10",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
+        neovide_cursor_vfx_mode = "railgun",
       },
     },
     -- Mappings can be configured through AstroCore as well.

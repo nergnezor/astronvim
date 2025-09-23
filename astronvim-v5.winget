@@ -73,6 +73,15 @@ properties:
         source: winget
         # version: 24.8.0
 
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: gh
+      directives:
+        description: Install GitHub CLI (gh)
+      settings:
+        id: GitHub.cli
+        source: winget
+        # version: 2.79.0
+
     # --- GUI Enhancement ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: neovide
