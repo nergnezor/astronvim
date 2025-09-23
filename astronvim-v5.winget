@@ -1,0 +1,86 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify minimum OS version (Windows 11 / Server 2022 or later)
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.22000"
+  resources:
+    # Developer mode (optional). Comment out if you don't want this change.
+    - resource: Microsoft.Windows.Settings/WindowsSettings
+      directives:
+        description: Enable Developer Mode (optional)
+        allowPrerelease: true
+        securityContext: elevated
+      settings:
+        DeveloperMode: true
+
+    # --- Core Requirements ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: neovim
+      directives:
+        description: Install Neovim
+      settings:
+        id: Neovim.Neovim
+        source: winget
+        # version: 0.11.4   # Optionally pin
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: rustup
+      directives:
+        description: Install Rustup (toolchain manager)
+      settings:
+        id: Rustlang.Rustup
+        source: winget
+        # version: 1.28.2
+
+    # --- Productivity / CLI Tools ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: ripgrep
+      directives:
+        description: Install ripgrep (MSVC build)
+      settings:
+        id: BurntSushi.ripgrep.MSVC
+        source: winget
+        # version: 14.1.1
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: lazygit
+      directives:
+        description: Install lazygit
+      settings:
+        id: JesseDuffield.lazygit
+        source: winget
+        # version: 0.55.1
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: bottom
+      directives:
+        description: Install bottom (process/tab viewer)
+      settings:
+        id: Clement.bottom
+        source: winget
+        # version: 0.11.1
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: nodejs
+      directives:
+        description: Install Node.js (LTS/Current from OpenJS)
+      settings:
+        id: OpenJS.NodeJS
+        source: winget
+        # version: 24.8.0
+
+    # --- GUI Enhancement ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: neovide
+      directives:
+        description: Install Neovide GUI for Neovim
+      settings:
+        id: Neovide.Neovide
+        source: winget
+        # version: 0.15.2
+
+  configurationVersion: 0.2.0
