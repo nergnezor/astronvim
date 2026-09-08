@@ -6,11 +6,8 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.pack.dart" },
-  -- import/override with your plugins folder
-  { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.colorscheme.melange-nvim" },
-  { import = "astrocommunity.colorscheme.kanagawa-nvim" },
-  { import = "astrocommunity.colorscheme.nightfox-nvim" },
+  -- rust/dart packs removed: no rustc/cargo/flutter/dart on PATH, and they
+  -- pulled mason packages (codelldb, dart-debug-adapter, selene) that only
+  -- failed. Re-add when the toolchains are installed.
+  -- Colorschemes removed: Noctalia writes lua/matugen.lua via base16-nvim.
 }

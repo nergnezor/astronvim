@@ -8,8 +8,9 @@ return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
-    -- change colorscheme
-    colorscheme = "melange",
+    -- Fallback until Noctalia's lua/matugen.lua + plugins/base16.lua apply;
+    -- polish.lua re-applies matugen last so this does not win permanently.
+    colorscheme = "astrodark",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
