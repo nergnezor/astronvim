@@ -6,6 +6,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.git.diffview-nvim" },
   -- rust/dart packs removed: no rustc/cargo/flutter/dart on PATH, and they
   -- pulled mason packages (codelldb, dart-debug-adapter, selene) that only
   -- failed. Re-add when the toolchains are installed.
